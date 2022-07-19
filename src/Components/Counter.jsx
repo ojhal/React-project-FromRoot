@@ -6,17 +6,20 @@ class Counter extends Component {
         tags: ["tag1","tag2","tag3"] // rendering lists
     }
 
-    randerTags = () => {
-        if(this.state.tags.length === 0) return <p>There are no tags!</p>
-        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+    handleIncrament = () => {//event handling
+        console.log("clicked")
     }
+    // randerTags = () => {
+    //     if(this.state.tags.length === 0) return <p>There are no tags!</p>
+    //     return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+    // }
     render() { //conditional rendering
         // let classes = this.getBadgeClasses(); //Refactoring
         return (//setting the attributes(classname)
             <div>
-                {/* <span className={this.getBadgeClasses()}>{this.formatCouter()}</span> 
-                <button className='btn btn-secondary btn-sm'>increament</button> */}
-                {this.randerTags()}/
+                <span className={this.getBadgeClasses()}>{this.formatCouter()}</span> 
+                <button  onClick={this.handleIncrament} className='btn btn-secondary btn-sm'>increament</button>
+                {/* {this.randerTags()} */}
             </div>
         );
 
