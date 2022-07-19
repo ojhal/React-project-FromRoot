@@ -2,18 +2,21 @@ import React, { Component } from 'react'
 
 class Counter extends Component {
     state = {
-        count: 0, //add value dynamically with state
+        count: 1, //add value dynamically with state
         tags: ["tag1","tag2","tag3"] // rendering lists
     }
-    render() { 
+
+    randerTags = () => {
+        if(this.state.tags.length === 0) return <p>There are no tags!</p>
+        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+    }
+    render() { //conditional rendering
         // let classes = this.getBadgeClasses(); //Refactoring
         return (//setting the attributes(classname)
             <div>
-                <span className={this.getBadgeClasses()}>{this.formatCouter()}</span> 
-                <button className='btn btn-secondary btn-sm'>increament</button>
-                <ul>
-                    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-                </ul>
+                {/* <span className={this.getBadgeClasses()}>{this.formatCouter()}</span> 
+                <button className='btn btn-secondary btn-sm'>increament</button> */}
+                {this.randerTags()}/
             </div>
         );
 
