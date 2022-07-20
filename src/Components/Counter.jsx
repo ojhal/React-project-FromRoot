@@ -6,8 +6,8 @@ class Counter extends Component {
         tags: ["tag1","tag2","tag3"] // rendering lists
     }
 
-    handleIncrament = () => {//event handling
-        console.log("clicked")
+    handleIncrament = () => {//event handling and binding
+        console.log("clicked",this)
     }
     // randerTags = () => {
     //     if(this.state.tags.length === 0) return <p>There are no tags!</p>
