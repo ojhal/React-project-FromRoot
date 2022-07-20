@@ -7,7 +7,7 @@ class Counter extends Component {
     }
 
     handleIncrament = () => {//event handling and binding
-        console.log("clicked",this)
+        this.setState({count : this.state.count + 1})
     }
     // randerTags = () => {
     //     if(this.state.tags.length === 0) return <p>There are no tags!</p>
