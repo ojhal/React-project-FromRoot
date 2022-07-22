@@ -2,23 +2,25 @@ import React, { Component } from 'react'
 
 class Counter extends Component {
     state = {
-        count: 1, //add value dynamically with state
+        value: this.props.value, //add value dynamically with state and passing data to components
         tags: ["tag1","tag2","tag3"] // rendering lists
     }
 
-    handleIncrament = () => {//event handling and binding
-        this.setState({count : this.state.count + 1})
+    handleIncrament = product => {//event handling and binding
+        console.log(product)
+        this.setState({value : this.state.count + 1})
     }
     // randerTags = () => {
     //     if(this.state.tags.length === 0) return <p>There are no tags!</p>
     //     return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     // }
     render() { //conditional rendering
+        // console.log("props",this.props)
         // let classes = this.getBadgeClasses(); //Refactoring
         return (//setting the attributes(classname)
             <div>
                 <span className={this.getBadgeClasses()}>{this.formatCouter()}</span> 
-                <button  onClick={this.handleIncrament} className='btn btn-secondary btn-sm'>increament</button>
+                <button  onClick={ () => {this.handleIncrament({id:1})}} className='btn btn-secondary btn-sm'>increament</button>
                 {/* {this.randerTags()} */}
             </div>
         );

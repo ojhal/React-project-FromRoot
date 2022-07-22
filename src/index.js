@@ -1,5 +1,5 @@
 import React from 'react';
 import  ReactDOM  from 'react-dom';
 import "bootstrap/dist/css/bootstrap.css"
-import Counter from './Components/Counter'
-ReactDOM.render(<Counter/>, document.getElementById('root'));
+import Counters from './Components/Counters'
+ReactDOM.render(<Counters/>, document.getElementById('root'));
