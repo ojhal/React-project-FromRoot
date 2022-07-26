@@ -15,10 +15,12 @@ class Counter extends Component {
     //     return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     // }
     render() { //conditional rendering
+        // console.log(this.props)
         // console.log("props",this.props)
         // let classes = this.getBadgeClasses(); //Refactoring
         return (//setting the attributes(classname)
-            <div>
+        <div>
+                {this.props.children}
                 <span className={this.getBadgeClasses()}>{this.formatCouter()}</span> 
                 <button  onClick={ () => {this.handleIncrament({id:1})}} className='btn btn-secondary btn-sm'>increament</button>
                 {/* {this.randerTags()} */}
